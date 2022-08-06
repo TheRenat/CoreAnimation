@@ -20,25 +20,25 @@ class ViewController: UIViewController {
     @IBOutlet var delayLabel: UILabel!
     
     @IBAction func startAnimationButton(_ sender: UIButton) {
-        get(animation: animationButton.configuration?.title ?? "")
-        print(springAnimationView.animation)
+        
+        setParameters(for: animationButton.configuration?.title ?? "")
         getValues()
+        nextAnimation()
     }
     
-    private func get(animation: String) {
+    private func setParameters(for animation: String) {
         springAnimationView.animation = animation
         springAnimationView.curve = AnimationCurve.allCases.randomElement()?.rawValue ?? " "
         springAnimationView.delay = Double.random(in: 0...0.5)
         springAnimationView.force = Double.random(in: 0.5...1.5)
         springAnimationView.duration = Double.random(in: 0.5...1.5)
         springAnimationView.animate()
-        nextAnimation()
     }
     
     private func nextAnimation() -> String {
-        let number = AnimationPreset.allCases.randomElement()?.rawValue ?? " "
-        animationButton.configuration?.title = number
-        return number
+        let animationName = AnimationPreset.allCases.randomElement()?.rawValue ?? " "
+        animationButton.configuration?.title = animationName
+        return animationName
     }
     
     private func getValues() {
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         forceLabel.text = "Force: \(String(format: "%.2f", springAnimationView.force))"
         durationLabel.text = "Duration: \(String(format: "%.2f", springAnimationView.duration))"
         delayLabel.text = "Delay: \(String(format: "%.2f", springAnimationView.delay))"
-        
     }
 }
+
 
