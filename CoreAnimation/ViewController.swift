@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet var delayLabel: UILabel!
     
     @IBAction func startAnimationButton(_ sender: UIButton) {
-        
         setParameters(for: animationButton.configuration?.title ?? "")
         getValues()
         nextAnimation()
