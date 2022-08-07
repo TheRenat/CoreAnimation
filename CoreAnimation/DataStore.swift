@@ -13,6 +13,7 @@ class DataStore {
     static let share = DataStore()
     
     let animations = AnimationPreset.allCases
+    let curves = AnimationCurve.allCases
     
     private init() {}
 }

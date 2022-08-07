@@ -10,9 +10,9 @@ import Foundation
 struct Animaton {
     let name: String
     let curve: String
-    let force: Int
-    let duration: Int
-    let delay: Int
+    let force: Double
+    let duration: Double
+    let delay: Double
     
     var description: String {
         """
@@ -24,12 +24,12 @@ struct Animaton {
         """
     }
     
-    func getRandomAnimation() {
+   static func getRandomAnimation() -> Animaton {
         Animaton(
             name: DataStore.share.animations.randomElement()?.rawValue ?? "",
-            curve: <#T##String#>,
-            force: <#T##Int#>,
-            duration: <#T##Int#>,
+            curve: DataStore.share.curves.randomElement()?.rawValue ?? "",
+            force: Double.random(in: 1...1.5),
+            duration: Double.random(in: 1...1.5),
             delay: Double.random(in: 0.3...0.7)
         )
     }
