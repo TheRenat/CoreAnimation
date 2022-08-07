@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     
     //MARK: - IB Outlets
     @IBOutlet weak var springAnimationView: SpringView!
-    @IBOutlet weak var animationParametersLabel: UILabel! {
+    @IBOutlet weak var springAnimationLabel: UILabel! {
         didSet {
-            animationParametersLabel.text = animation.description
+            springAnimationLabel.text = animation.description
         }
     }
     
@@ -22,32 +22,18 @@ class ViewController: UIViewController {
     private var animation = Animation.getRandomAnimation()
     
     //MARK: - IB Actions
-
     @IBAction func startAnimationButton(_ sender: UIButton) {
-        animationParametersLabel.text = animation.description
-    }
-    
-    private func setParameters(for animation: String) {
-        springAnimationView.animation = animation
-        springAnimationView.curve = AnimationCurve.allCases.randomElement()?.rawValue ?? " "
-        springAnimationView.delay = Double.random(in: 0...0.5)
-        springAnimationView.force = Double.random(in: 0.5...1.5)
-        springAnimationView.duration = Double.random(in: 0.5...1.5)
+        springAnimationLabel.text = animation.description
+
+        springAnimationView.animation = animation.name
+        springAnimationView.curve = animation.curve
+        springAnimationView.delay = animation.delay
+        springAnimationView.force = animation.force
+        springAnimationView.duration = animation.duration
         springAnimationView.animate()
-    }
-    
-    private func nextAnimation() -> String {
-        let animationName = AnimationPreset.allCases.randomElement()?.rawValue ?? " "
-        animationButton.configuration?.title = animationName
-        return animationName
-    }
-    
-    private func getValues() {
-        presentLabel.text = "Present: \(springAnimationView.animation)"
-        curveLabel.text = "Curve: \(springAnimationView.curve)"
-        forceLabel.text = "Force: \(String(format: "%.2f", springAnimationView.force))"
-        durationLabel.text = "Duration: \(String(format: "%.2f", springAnimationView.duration))"
-        delayLabel.text = "Delay: \(String(format: "%.2f", springAnimationView.delay))"
+        
+        animation = Animation.getRandomAnimation()
+        sender.setTitle("Run \(animation.name)", for: .normal)
     }
 }
 

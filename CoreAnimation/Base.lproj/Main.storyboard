@@ -19,26 +19,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpJ-iX-oTw" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="87" y="101" width="240" height="163"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lcU-Wk-dOs">
-                                        <rect key="frame" x="12" y="14.5" width="216" height="134.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Animation parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgH-vb-XkF">
-                                                <rect key="frame" x="0.0" y="0.0" width="216" height="134.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Parameters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-v0-tKU">
+                                        <rect key="frame" x="12" y="8" width="216" height="147"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="lcU-Wk-dOs" firstAttribute="centerY" secondItem="tpJ-iX-oTw" secondAttribute="centerY" id="AZ4-iR-gir"/>
                                     <constraint firstAttribute="width" constant="240" id="E4N-xx-gt3"/>
-                                    <constraint firstItem="lcU-Wk-dOs" firstAttribute="width" secondItem="tpJ-iX-oTw" secondAttribute="width" multiplier="0.9" id="KBm-IA-H2J"/>
+                                    <constraint firstItem="hRl-v0-tKU" firstAttribute="width" secondItem="tpJ-iX-oTw" secondAttribute="width" multiplier="0.9" id="QyX-tP-dol"/>
+                                    <constraint firstItem="hRl-v0-tKU" firstAttribute="centerX" secondItem="tpJ-iX-oTw" secondAttribute="centerX" id="ba9-2R-vvO"/>
+                                    <constraint firstItem="hRl-v0-tKU" firstAttribute="centerY" secondItem="tpJ-iX-oTw" secondAttribute="centerY" id="bkP-7p-kLH"/>
+                                    <constraint firstItem="hRl-v0-tKU" firstAttribute="height" secondItem="tpJ-iX-oTw" secondAttribute="height" multiplier="0.9" id="gYT-F5-Bga"/>
                                     <constraint firstAttribute="height" constant="163" id="p2d-9N-ocf"/>
-                                    <constraint firstItem="lcU-Wk-dOs" firstAttribute="centerX" secondItem="tpJ-iX-oTw" secondAttribute="centerX" id="pkB-O3-cxl"/>
-                                    <constraint firstItem="lcU-Wk-dOs" firstAttribute="height" secondItem="tpJ-iX-oTw" secondAttribute="height" multiplier="0.825153" id="wZw-Vl-sbg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -64,7 +59,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="startAnimationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="65x-cJ-yZp"/>
+                                    <action selector="startAnimationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zep-WR-Elv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,9 +74,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animationButton" destination="KKX-2V-abj" id="lHK-rf-eF8"/>
-                        <outlet property="animationParametersLabel" destination="LgH-vb-XkF" id="ScG-WY-s5R"/>
-                        <outlet property="springAnimationView" destination="tpJ-iX-oTw" id="iDN-RG-m4R"/>
+                        <outlet property="springAnimationLabel" destination="hRl-v0-tKU" id="yLy-dt-ZC3"/>
+                        <outlet property="springAnimationView" destination="tpJ-iX-oTw" id="lqH-iL-Vv7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

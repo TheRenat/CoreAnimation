@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Animaton {
+struct Animation {
     let name: String
     let curve: String
     let force: Double
@@ -24,8 +24,8 @@ struct Animaton {
         """
     }
     
-   static func getRandomAnimation() -> Animaton {
-        Animaton(
+   static func getRandomAnimation() -> Animation {
+        Animation(
             name: DataStore.share.animations.randomElement()?.rawValue ?? "",
             curve: DataStore.share.curves.randomElement()?.rawValue ?? "",
             force: Double.random(in: 1...1.5),
