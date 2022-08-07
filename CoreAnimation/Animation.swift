@@ -26,7 +26,7 @@ struct Animaton {
     
     func getRandomAnimation() {
         Animaton(
-            name: DataStore.,
+            name: DataStore.share.animations.randomElement()?.rawValue ?? "",
             curve: <#T##String#>,
             force: <#T##Int#>,
             duration: <#T##Int#>,
