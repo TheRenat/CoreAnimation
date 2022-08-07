@@ -80,6 +80,7 @@
                     </view>
                     <connections>
                         <outlet property="animationButton" destination="KKX-2V-abj" id="lHK-rf-eF8"/>
+                        <outlet property="animationParametersLabel" destination="LgH-vb-XkF" id="ScG-WY-s5R"/>
                         <outlet property="springAnimationView" destination="tpJ-iX-oTw" id="iDN-RG-m4R"/>
                     </connections>
                 </viewController>

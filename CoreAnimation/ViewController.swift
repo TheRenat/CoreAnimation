@@ -10,14 +10,21 @@ import SpringAnimation
 
 class ViewController: UIViewController {
     
-    @IBOutlet var springAnimationView: SpringView!
-    @IBOutlet var animationButton: UIButton!
+    //MARK: - IB Outlets
+    @IBOutlet weak var springAnimationView: SpringView!
+    @IBOutlet weak var animationParametersLabel: UILabel! {
+        didSet {
+            animationParametersLabel.text = animation.description
+        }
+    }
     
+   //MARK: - Private Methods
+    private var animation = Animation.getRandomAnimation()
     
+    //MARK: - IB Actions
+
     @IBAction func startAnimationButton(_ sender: UIButton) {
-        setParameters(for: animationButton.configuration?.title ?? "")
-        getValues()
-        nextAnimation()
+        animationParametersLabel.text = animation.description
     }
     
     private func setParameters(for animation: String) {
