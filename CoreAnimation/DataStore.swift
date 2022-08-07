@@ -10,5 +10,9 @@ import SpringAnimation
 
 class DataStore {
     
+    static let share = DataStore()
+    
     let animations = AnimationPreset.allCases
+    
+    private init() {}
 }

@@ -26,6 +26,11 @@ struct Animaton {
     
     func getRandomAnimation() {
         Animaton(
-            name: <#T##String#>, curve: <#T##String#>, force: <#T##Int#>, duration: <#T##Int#>, delay: <#T##Int#>)
+            name: DataStore.,
+            curve: <#T##String#>,
+            force: <#T##Int#>,
+            duration: <#T##Int#>,
+            delay: Double.random(in: 0.3...0.7)
+        )
     }
 }
