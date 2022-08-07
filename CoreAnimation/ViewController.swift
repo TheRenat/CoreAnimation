@@ -13,11 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet var springAnimationView: SpringView!
     @IBOutlet var animationButton: UIButton!
     
-    @IBOutlet var presentLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
     
     @IBAction func startAnimationButton(_ sender: UIButton) {
         setParameters(for: animationButton.configuration?.title ?? "")
